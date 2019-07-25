@@ -4,23 +4,25 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
+import static com.dh.chat.contact.service.model.domain.Constants.DetailTable;
+
 /**
  * @author Santiago Mamani
  */
 @Entity
-@Table(name = "detail_table")
+@Table(name = DetailTable.NAME)
 public class Detail implements Serializable {
 
     @Id
-    @Column(name = "detailid", nullable = false)
+    @Column(name = DetailTable.Id.NAME, nullable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "information", length = 100, nullable = false)
+    @Column(name = DetailTable.Information.NAME, length = DetailTable.Information.LENGTH, nullable = false)
     private String information;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "createddate", nullable = false, updatable = false)
+    @Column(name = DetailTable.CratedDate.NAME, nullable = false, updatable = false)
     private Date createdDate;
 
     public Long getId() {

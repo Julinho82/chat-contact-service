@@ -46,7 +46,25 @@ public final class Constants {
         }
 
         public static class DetailId{
-            public static final String NAME = "detailid";
+            public static final String NAME = "detid";
+        }
+    }
+
+    public static class DetailTable {
+        public static final String NAME = "detail_table";
+
+        public static class Id {
+            public static final String NAME = "id";
+        }
+
+        public static class Information {
+            public static final String NAME = "information";
+
+            public static final int LENGTH = 200;
+        }
+
+        public static class CratedDate {
+            public static final String NAME = "createddate";
         }
     }
 }

@@ -1,11 +1,11 @@
 package com.dh.chat.contact.service.model.domain;
 
 import javax.persistence.*;
-
-import com.dh.chat.contact.service.model.domain.Constants.ContactTable;
-
 import java.io.Serializable;
 import java.util.Date;
+
+import static com.dh.chat.contact.service.model.domain.Constants.ContactTable;
+import static com.dh.chat.contact.service.model.domain.Constants.DetailTable;
 
 /**
  * @author Santiago Mamani
@@ -39,7 +39,7 @@ public class Contact implements Serializable {
     private Date createdDate;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = ContactTable.DetailId.NAME, referencedColumnName = "detailid", nullable = false)
+    @JoinColumn(name = ContactTable.DetailId.NAME, referencedColumnName = DetailTable.Id.NAME, nullable = false)
     private Detail detail;
 
     public Long getId() {
