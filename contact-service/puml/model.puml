@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator none
+
+hide method
+
+namespace admin.service.model.domain {
+
+    class Detail {
+        - id: Long
+        - information: String
+        - createdDate: Date
+    }
+
+   class Contact {
+        - id: Long
+        - userId: Long
+        - accountId: Long
+        - email: String
+        - name: String
+        - avatarId: String
+        - createdDate: Date
+        - detail: Detail
+    }
+
+     Contact *-right-> Detail : detail
+}
+@enduml
