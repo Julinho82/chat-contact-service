@@ -1,5 +1,7 @@
 package com.dh.chat.contact.service.model.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -10,6 +12,7 @@ import static com.dh.chat.contact.service.model.domain.Constants.DetailTable;
 /**
  * @author Santiago Mamani
  */
+@Data
 @Entity
 @Table(name = ContactTable.NAME)
 public class Contact implements Serializable {
@@ -42,69 +45,7 @@ public class Contact implements Serializable {
     @JoinColumn(name = ContactTable.DetailId.NAME, referencedColumnName = DetailTable.Id.NAME, nullable = false)
     private Detail detail;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAvatarId() {
-        return avatarId;
-    }
-
-    public void setAvatarId(String avatarId) {
-        this.avatarId = avatarId;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Detail getDetail() {
-        return detail;
-    }
-
-    public void setDetail(Detail detail) {
-        this.detail = detail;
-    }
 
     @PrePersist
     void onPrePersist(){
