@@ -46,9 +46,8 @@ public class Contact implements Serializable {
     private Detail detail;
 
 
-
     @PrePersist
-    void onPrePersist(){
+    void onPrePersist() {
         this.createdDate = new Date();
     }
 }

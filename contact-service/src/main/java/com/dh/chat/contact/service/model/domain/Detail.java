@@ -29,9 +29,8 @@ public class Detail implements Serializable {
     private Date createdDate;
 
 
-
     @PrePersist
-    void onPrePersist(){
+    void onPrePersist() {
         this.createdDate = new Date();
     }
 }

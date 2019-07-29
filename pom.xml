@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
-   <modules>
-       <module>contact-service</module>
-   </modules>
+    <modules>
+        <module>contact-service</module>
+    </modules>
 </project>
