@@ -31,6 +31,19 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false);
     }
 
+    @Bean
+    public Docket system() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("contatc-system")
+                .select()
+                .apis(RequestHandlerSelectors
+                        .basePackage("com.dh.chat.contact.service.controller.system"))
+                .paths(PathSelectors.any())
+                .build()
+                .apiInfo(apiEndPointsInfo())
+                .useDefaultResponseMessages(false);
+    }
+
     private ApiInfo apiEndPointsInfo() {
 
         return new ApiInfoBuilder()
@@ -40,18 +53,5 @@ public class SwaggerConfig {
                 .version("1.0.0")
                 .license("Apache 1.0").licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
                 .build();
-    }
-
-    @Bean
-    public Docket system() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("contact-system")
-                .select()
-                .apis(RequestHandlerSelectors
-                        .basePackage("com.dh.chat.contact.service.controller.system"))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(apiEndPointsInfo())
-                .useDefaultResponseMessages(false);
     }
 }

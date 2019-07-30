@@ -34,7 +34,7 @@ public class Contact implements Serializable {
     @Column(name = ContactTable.Name.NAME, length = ContactTable.Name.LENGTH, nullable = false)
     private String name;
 
-    @Column(name = ContactTable.AvatarId.NAME, length = ContactTable.AvatarId.LENGTH, nullable = false)
+    @Column(name = ContactTable.AvatarId.NAME, length = ContactTable.AvatarId.LENGTH)
     private String avatarId;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -44,7 +44,6 @@ public class Contact implements Serializable {
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = ContactTable.DetailId.NAME, referencedColumnName = DetailTable.Id.NAME, nullable = false)
     private Detail detail;
-
 
     @PrePersist
     void onPrePersist() {

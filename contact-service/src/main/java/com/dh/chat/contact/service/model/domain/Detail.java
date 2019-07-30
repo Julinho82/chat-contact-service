@@ -28,7 +28,6 @@ public class Detail implements Serializable {
     @Column(name = DetailTable.CratedDate.NAME, nullable = false, updatable = false)
     private Date createdDate;
 
-
     @PrePersist
     void onPrePersist() {
         this.createdDate = new Date();
